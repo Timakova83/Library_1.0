@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="header">
+        <div class="baner">
+            <img class="baner_img" src="{% static 'images/banner.jpeg' %}"  alt="">
+            <h1 class="baner_title">БИБЛИОТЕКА</h1>
+        </div>
+        <div class="nav">
+            <div class="nav_text">
+                <a href="{% url 'urlHomePage' %}" class="nav__link">ГЛАВНАЯ</a>
+                <img class="nav_line_decor" src="{% static 'images/line.png' %}" alt="">
+                <a href=" {% url "urlAuthPage" %} " class="nav__link">ВХОД</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <img class="main_img" src="{% static 'images/body-fon.jpg' %}" alt="">
+        <div class="main_block">  
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

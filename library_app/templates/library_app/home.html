@@ -1,0 +1,14 @@
+{% extends 'library_app/base.html' %}
+
+{% block title %}Главная{% endblock  %}
+
+{% block content %}
+    <form action="" method="post" class="search_form">
+    {% csrf_token %}
+    <div class="search_form-row">
+        <label for="">ПОИСК КНИГ</label>
+        <input type="text" placeholder="Введите название книги или фамилию автора" name="searchBook" id="searchBook" required>
+        <button type="submit">Найти</button>
+    </div>
+    </form>
+{% endblock  %}
