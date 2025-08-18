@@ -3,5 +3,26 @@
 {% block title %}Авторизация{% endblock  %}
 
 {% block content %}
-   
+    <div class="auth">
+        <h1 class="auth-title">Авторизация</h1>
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form action="" method="post" class="auth__form">
+            {% csrf_token %}
+            <div class="auth_form_row">
+                <label for="">Логин</label>
+                <input class="row" type="text" name="usLogin" id="usLogin" placeholder="ivan25" required>
+            </div>
+            <div class="auth_form_row">
+                <label for="">Пароль</label>
+                <input class="row" type="password" name="usPassword" id="usPassword" placeholder="********" required>
+            </div>
+            <button>Войти</button>
+        </form>
+    </div>
 {% endblock  %}
